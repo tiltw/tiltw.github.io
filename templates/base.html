@@ -3,13 +3,42 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Blog</title>
+        <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ get_url(path='catshu_favicon.png') }}">
     </head>
     <body>
-        <section class="section">
-            <div class="container">
+
+    <header>
+        <h1><a href="{{ get_url(path='@/_index.md')  }}">tilt.moe</a></h1>
+    </header>
+
+    <div id="content">
+
+        <div id="sidebar">
+            <div id="avatar">
+                <img src="{{ get_url(path='catshu.png') }}" alt="my icon">
+            </div>
+
+            <div id="bio">
+                <p>tilt</p>
+            </div>
+
+            <ul>
+                <li><a href="{{ get_url(path='@/about/index.md')  }}">About</a></li>
+                <li><a href="{{ get_url(path='@/blog/_index.md')  }}">Blog</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <div class="prose">
                 {% block content %} {%endblock content %}
             </div>
-        </section>
+        </main>
+
+    </div>
+
+    <footer>© 2026 tilt |
+        template by <a href="https://nomnomnami.com">NomnomNami</a>
+    </footer>
     </body>
-    <a href="{{ get_url(path='@/_index.md')  }}">Home</a>
 </html>
